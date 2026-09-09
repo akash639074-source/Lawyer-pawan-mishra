@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>पवन कुमार मिश्र, एडवोकेट — विधि परामर्श एवं प्रतिनिधित्व</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2129;
+    --ink-soft:#2A323D;
+    --paper:#F6F2E9;
+    --paper-dim:#EDE7D8;
+    --maroon:#6E2430;
+    --maroon-deep:#4E1620;
+    --brass:#AD8A4E;
+    --brass-light:#D8C398;
+    --text:#232323;
+    --text-soft:#5B5650;
+    --line:rgba(27,33,41,0.14);
+    --radius:2px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--text);
+    font-family:'Noto Sans Devanagari', sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Noto Serif Devanagari', serif;
+    color:var(--ink);
+    font-weight:600;
+    line-height:1.3;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 28px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  ::selection{background:var(--brass-light); color:var(--maroon-deep);}
+  :focus-visible{outline:2px solid var(--maroon); outline-offset:3px;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:60;
+    background:rgba(246,242,233,0.94);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 0;}
+  .brand{display:flex; align-items:center; gap:10px;}
+  .brand-mark{width:34px; height:34px;}
+  .brand-name{font-family:'Noto Serif Devanagari',serif; font-size:1.28rem; font-weight:700; color:var(--ink);}
+  nav.links{display:flex; gap:30px; font-size:0.98rem;}
+  nav.links a{border-bottom:1px solid transparent; padding-bottom:2px; transition:border-color .2s;}
+  nav.links a:hover{border-color:var(--maroon);}
+  .nav-cta{display:flex; align-items:center; gap:14px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; font-size:0.96rem; font-weight:600;
+    border-radius:var(--radius); cursor:pointer; border:1px solid transparent;
+    transition:transform .15s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+    font-family:'Noto Sans Devanagari', sans-serif;
+  }
+  .btn-primary{background:var(--maroon); color:var(--paper);}
+  .btn-primary:hover{background:var(--maroon-deep); transform:translateY(-1px);}
+  .btn-outline{border-color:var(--ink); color:var(--ink); background:transparent;}
+  .btn-outline:hover{background:var(--ink); color:var(--paper);}
+  .btn-call{border-color:var(--brass); color:var(--ink);}
+  .btn-call:hover{background:var(--brass); color:var(--ink);}
+  .btn-sm{padding:9px 16px; font-size:0.88rem;}
+  .menu-toggle{display:none; background:none; border:none; cursor:pointer;}
+  @media (max-width:900px){
+    nav.links{display:none;}
+    .menu-toggle{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--ink);
+    color:var(--paper);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:50px;
+    padding-top:86px; padding-bottom:76px; align-items:center;
+  }
+  @media (max-width:900px){ .hero .wrap{grid-template-columns:1fr; padding-top:56px; padding-bottom:50px;} }
+  .hero-eyebrow{color:var(--brass-light); font-size:0.95rem; margin-bottom:18px; display:flex; align-items:center; gap:10px;}
+  .hero-eyebrow .rule{width:34px; height:1px; background:var(--brass-light);}
+  .hero h1{
+    color:var(--paper); font-size:clamp(2.1rem,4.4vw,3.4rem); font-weight:600; letter-spacing:0.2px;
+  }
+  .hero p.lede{
+    margin-top:22px; color:#D9D3C4; font-size:1.12rem; max-width:46ch;
+  }
+  .hero-actions{display:flex; gap:16px; margin-top:34px; flex-wrap:wrap;}
+  .hero-stats{
+    display:flex; gap:34px; margin-top:52px; padding-top:28px; border-top:1px solid rgba(216,195,152,0.25);
+  }
+  .stat b{display:block; font-family:'Noto Serif Devanagari',serif; font-size:1.7rem; color:var(--brass-light); font-weight:700;}
+  .stat span{font-size:0.88rem; color:#C7C0AF;}
+  .hero-art{position:relative;}
+  .hero-art svg{width:100%; height:auto;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:88px 0;}
+  @media (max-width:640px){ section{padding:56px 0;} }
+  .section-head{max-width:640px; margin-bottom:48px;}
+  .section-head .tag{color:var(--maroon); font-size:0.92rem; font-weight:600; margin-bottom:10px; display:block;}
+  .section-head h2{font-size:clamp(1.6rem,2.8vw,2.3rem);}
+  .section-head p{color:var(--text-soft); margin-top:14px; font-size:1.03rem;}
+  .alt{background:var(--paper-dim);}
+
+  /* ---------- PRACTICE AREAS (asymmetric grid) ---------- */
+  .practice-grid{
+    display:grid;
+    grid-template-columns:repeat(6, 1fr);
+    grid-auto-rows:170px;
+    gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .practice-card{
+    background:var(--paper);
+    padding:26px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    grid-column:span 2;
+    transition:background .2s ease;
+    position:relative;
+  }
+  .practice-card:hover{background:var(--ink); color:var(--paper);}
+  .practice-card:hover h3, .practice-card:hover svg{color:var(--paper); stroke:var(--brass-light);}
+  .practice-card:nth-child(1){grid-column:span 3; grid-row:span 2;}
+  .practice-card:nth-child(4){grid-column:span 3;}
+  .practice-card h3{font-size:1.12rem; margin-top:14px;}
+  .practice-card p{font-size:0.9rem; color:var(--text-soft); margin-top:6px;}
+  .practice-card:hover p{color:#C7C0AF;}
+  .practice-card svg{width:30px; height:30px; stroke:var(--maroon); fill:none; stroke-width:1.5;}
+  @media (max-width:900px){
+    .practice-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:auto;}
+    .practice-card, .practice-card:nth-child(1), .practice-card:nth-child(4){grid-column:span 1; grid-row:auto;}
+  }
+
+  /* ---------- ATTORNEY PROFILE ---------- */
+  .profile{display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:center;}
+  @media (max-width:900px){ .profile{grid-template-columns:1fr;} }
+  .profile-photo{
+    aspect-ratio:4/5; background:linear-gradient(160deg, var(--brass-light), var(--paper-dim));
+    border:1px solid var(--line); position:relative; overflow:hidden;
+  }
+  .profile-photo svg{position:absolute; inset:0; width:100%; height:100%;}
+  .profile-cred{display:flex; gap:22px; margin-top:26px; flex-wrap:wrap;}
+  .profile-cred div b{display:block; font-family:'Noto Serif Devanagari',serif; font-size:1.5rem; color:var(--maroon);}
+  .profile-cred div span{font-size:0.85rem; color:var(--text-soft);}
+  .profile-quote{
+    border-inline-start:3px solid var(--brass);
+    padding-inline-start:20px; margin:26px 0; font-family:'Noto Serif Devanagari',serif; font-size:1.15rem; color:var(--ink);
+  }
+
+  /* ---------- BOOKING ---------- */
+  .booking{
+    background:var(--ink); color:var(--paper);
+  }
+  .booking .section-head .tag{color:var(--brass-light);}
+  .booking .section-head h2{color:var(--paper);}
+  .booking .section-head p{color:#C7C0AF;}
+  .booking-panel{
+    display:grid; grid-template-columns:1.1fr 1fr; gap:0;
+    background:var(--ink-soft); border:1px solid rgba(216,195,152,0.2);
+  }
+  @media (max-width:900px){ .booking-panel{grid-template-columns:1fr;} }
+  .cal{padding:34px;}
+  .cal-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;}
+  .cal-head b{font-family:'Noto Serif Devanagari',serif; font-size:1.15rem;}
+  .cal-nav{display:flex; gap:8px;}
+  .cal-nav button{
+    width:30px; height:30px; border:1px solid rgba(216,195,152,0.35); background:none; color:var(--paper);
+    cursor:pointer; border-radius:var(--radius);
+  }
+  .cal-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; text-align:center;}
+  .cal-grid .dow{font-size:0.78rem; color:#9C9585; padding-bottom:6px;}
+  .cal-grid button.day{
+    aspect-ratio:1; border:1px solid rgba(216,195,152,0.15); background:none; color:var(--paper);
+    border-radius:var(--radius); cursor:pointer; font-size:0.92rem; transition:all .15s ease;
+  }
+  .cal-grid button.day:hover:not(:disabled){border-color:var(--brass-light);}
+  .cal-grid button.day:disabled{opacity:0.25; cursor:not-allowed;}
+  .cal-grid button.day.selected{background:var(--brass); color:var(--ink); border-color:var(--brass); font-weight:700;}
+  .slots{padding:34px; border-inline-start:1px solid rgba(216,195,152,0.2);}
+  @media (max-width:900px){ .slots{border-inline-start:none; border-top:1px solid rgba(216,195,152,0.2);} }
+  .slots b{font-family:'Noto Serif Devanagari',serif; font-size:1.05rem; display:block; margin-bottom:16px;}
+  .slot-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:24px;}
+  .slot-grid button{
+    padding:11px; border:1px solid rgba(216,195,152,0.3); background:none; color:var(--paper);
+    cursor:pointer; border-radius:var(--radius); font-size:0.9rem; font-family:'Noto Sans Devanagari',sans-serif;
+  }
+  .slot-grid button:hover{border-color:var(--brass-light);}
+  .slot-grid button.selected{background:var(--brass); color:var(--ink); border-color:var(--brass); font-weight:700;}
+  .booking-confirm{
+    background:rgba(173,138,78,0.12); border:1px dashed var(--brass); padding:16px; font-size:0.9rem;
+    border-radius:var(--radius); min-height:20px;
+  }
+  .booking-confirm.active{color:var(--brass-light);}
+
+  /* ---------- PAYMENT NOTE ---------- */
+  .pay-note{
+    margin-top:44px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
+    padding-top:28px; border-top:1px solid rgba(216,195,152,0.2);
+  }
+  .pay-badges{display:flex; gap:14px; flex-wrap:wrap;}
+  .pay-badges span{
+    border:1px solid rgba(216,195,152,0.35); padding:7px 14px; border-radius:var(--radius); font-size:0.84rem; color:#D9D3C4;
+  }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  @media (max-width:900px){ .testi-grid{grid-template-columns:1fr;} }
+  .testi-card{background:var(--paper); padding:34px 30px;}
+  .testi-mark{font-family:'Noto Serif Devanagari',serif; font-size:3rem; color:var(--brass); line-height:1; margin-bottom:6px;}
+  .testi-card p{font-size:0.98rem; color:var(--text);}
+  .testi-who{margin-top:20px; display:flex; align-items:center; gap:10px;}
+  .testi-dot{width:8px; height:8px; border-radius:50%; background:var(--maroon);}
+  .testi-who b{font-size:0.92rem;}
+  .testi-who span{font-size:0.82rem; color:var(--text-soft); display:block;}
+
+  /* ---------- BLOG ---------- */
+  .blog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:34px;}
+  @media (max-width:900px){ .blog-grid{grid-template-columns:1fr;} }
+  .blog-card{border-top:2px solid var(--ink); padding-top:18px;}
+  .blog-card .cat{color:var(--maroon); font-size:0.82rem; font-weight:600;}
+  .blog-card h3{margin-top:10px; font-size:1.15rem;}
+  .blog-card p{margin-top:10px; font-size:0.92rem; color:var(--text-soft);}
+  .blog-card .read{margin-top:14px; font-size:0.88rem; font-weight:600; color:var(--ink); display:inline-block; border-bottom:1px solid var(--ink);}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{background:var(--maroon-deep); color:var(--paper);}
+  .foot-top{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:50px; padding:70px 0 40px;}
+  @media (max-width:900px){ .foot-top{grid-template-columns:1fr; gap:34px;} }
+  .foot-top h4{color:var(--brass-light); font-size:0.98rem; margin-bottom:16px; font-weight:600;}
+  .foot-top p{color:#DCC9B9; font-size:0.94rem;}
+  .foot-links a{display:block; color:#E6D9CC; font-size:0.93rem; margin-bottom:10px;}
+  .foot-links a:hover{color:var(--brass-light);}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,0.14); padding:22px 0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:0.82rem; color:#C7A9A0;}
+
+  /* ---------- CHAT WIDGET ---------- */
+  .chat-fab{
+    position:fixed; bottom:24px; right:24px; z-index:80;
+    width:58px; height:58px; border-radius:50%; background:var(--maroon); border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; box-shadow:0 8px 22px rgba(0,0,0,0.25);
+    transition:transform .2s ease;
+  }
+  .chat-fab:hover{transform:scale(1.06);}
+  .chat-fab svg{width:26px; height:26px; stroke:var(--paper); fill:none; stroke-width:1.6;}
+  .chat-panel{
+    position:fixed; bottom:94px; right:24px; z-index:80; width:330px; max-width:88vw;
+    background:var(--paper); border:1px solid var(--line); box-shadow:0 14px 40px rgba(0,0,0,0.22);
+    display:none; flex-direction:column; overflow:hidden; border-radius:var(--radius);
+  }
+  .chat-panel.open{display:flex;}
+  .chat-head{background:var(--ink); color:var(--paper); padding:16px 18px; display:flex; justify-content:space-between; align-items:center;}
+  .chat-head b{font-family:'Noto Serif Devanagari',serif; font-size:1rem;}
+  .chat-head span{font-size:0.76rem; color:#B7CFC0; display:flex; align-items:center; gap:6px;}
+  .chat-head .dot{width:7px; height:7px; border-radius:50%; background:#7CBE8F;}
+  .chat-close{background:none; border:none; color:var(--paper); cursor:pointer; font-size:1.1rem;}
+  .chat-body{padding:16px; height:280px; overflow-y:auto; display:flex; flex-direction:column; gap:10px; font-size:0.88rem;}
+  .msg{max-width:82%; padding:9px 12px; border-radius:10px; line-height:1.5;}
+  .msg.bot{background:var(--paper-dim); align-self:flex-start; border-bottom-left-radius:2px;}
+  .msg.me{background:var(--maroon); color:var(--paper); align-self:flex-end; border-bottom-right-radius:2px;}
+  .chat-input{display:flex; border-top:1px solid var(--line);}
+  .chat-input input{flex:1; border:none; padding:12px 14px; font-size:0.88rem; font-family:inherit; background:var(--paper);}
+  .chat-input input:focus{outline:none;}
+  .chat-input button{background:var(--ink); color:var(--paper); border:none; padding:0 16px; cursor:pointer;}
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    background:var(--brass-light); text-align:center; padding:70px 0;
+  }
+  .cta-band h2{font-size:clamp(1.5rem,3vw,2.1rem); color:var(--maroon-deep);}
+  .cta-band p{margin-top:12px; color:#5C4A2E;}
+  .cta-band .hero-actions{justify-content:center; margin-top:28px;}
+  .cta-band .btn-outline{border-color:var(--maroon-deep); color:var(--maroon-deep);}
+  .cta-band .btn-outline:hover{background:var(--maroon-deep); color:var(--paper);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none">
+        <path d="M20 4V36M8 12L20 4L32 12M6 12H14L10 22C10 22 6 25 6 12ZM26 12H34L30 22C30 22 26 25 26 12ZM14 36H26" stroke="#6E2430" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">पवन कुमार मिश्र, एडवोकेट</span>
+    </div>
+    <nav class="links">
+      <a href="#practice">प्रैक्टिस एरिया</a>
+      <a href="#profile">वकील परिचय</a>
+      <a href="#booking">अपॉइंटमेंट</a>
+      <a href="#testimonials">क्लाइंट अनुभव</a>
+      <a href="#blog">लीगल ब्लॉग</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+918840004115" class="btn btn-call btn-sm">📞 अभी कॉल करें</a>
+      <a href="#booking" class="btn btn-primary btn-sm">परामर्श बुक करें</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="hero-eyebrow"><span class="rule"></span> जिला एवं सत्र न्यायालय, कुशीनगर में अधिवक्ता</div>
+      <h1>जब कानूनी उलझन हो, पवन कुमार मिश्र आपके साथ खड़े हैं</h1>
+      <p class="lede">फौजदारी, पारिवारिक, कॉर्पोरेट और संपत्ति से जुड़े मामलों में स्पष्ट सलाह और मज़बूत प्रतिनिधित्व — पहली मुलाकात से लेकर फैसले तक।</p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn btn-primary">अभी अपॉइंटमेंट लें</a>
+        <a href="tel:+918840004115" class="btn btn-outline" style="border-color:#D8C398; color:#F6F2E9;">📞 सीधे कॉल करें</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>जिला एवं सत्र</b><span>न्यायालय, कुशीनगर</span></div>
+        <div class="stat"><b>पड़रौना</b><span>चेंबर स्थान</span></div>
+        <div class="stat"><b>4.9/5</b><span>क्लाइंट रेटिंग</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 380 440" fill="none">
+        <circle cx="190" cy="150" r="130" stroke="#AD8A4E" stroke-width="1" opacity="0.4"/>
+        <path d="M190 60V330" stroke="#D8C398" stroke-width="1.4"/>
+        <path d="M120 100L190 60L260 100" stroke="#D8C398" stroke-width="1.4"/>
+        <path d="M90 100H150L120 175C120 175 90 190 90 100Z" stroke="#D8C398" stroke-width="1.2"/>
+        <path d="M230 100H290L260 175C260 175 230 190 230 100Z" stroke="#D8C398" stroke-width="1.2"/>
+        <rect x="145" y="330" width="90" height="10" stroke="#D8C398" stroke-width="1.2"/>
+        <text x="190" y="410" text-anchor="middle" fill="#9C9585" font-size="13" font-family="Noto Sans Devanagari">विधि । सत्य । संतुलन</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="practice">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">प्रैक्टिस एरिया</span>
+      <h2>हम किन मामलों में आपकी मदद करते हैं</h2>
+      <p>हर क्षेत्र में अनुभवी वकीलों की टीम, ताकि आपकी समस्या सही हाथों में पहुंचे।</p>
+    </div>
+    <div class="practice-grid">
+      <div class="practice-card">
+        <svg viewBox="0 0 24 24"><path d="M12 2L4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4z"/></svg>
+        <div><h3>फौजदारी मामले (Criminal Law)</h3><p>गिरफ्तारी, जमानत, FIR रद्दीकरण और ट्रायल में तुरंत सहायता।</p></div>
+      </div>
+      <div class="practice-card">
+        <svg viewBox="0 0 24 24"><path d="M12 21c-4-3-8-6-8-11a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 5-4 8-8 11z"/></svg>
+        <div><h3>पारिवारिक मामले</h3><p>तलाक, गुजारा भत्ता, कस्टडी</p></div>
+      </div>
+      <div class="practice-card">
+        <svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12M9 21v-6h6v6"/></svg>
+        <div><h3>संपत्ति विवाद</h3><p>रजिस्ट्री, कब्ज़ा, बंटवारा</p></div>
+      </div>
+      <div class="practice-card">
+        <svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h10"/></svg>
+        <div><h3>कॉर्पोरेट व व्यावसायिक कानून</h3><p>कंपनी रजिस्ट्रेशन, अनुबंध, अनुपालन और वाणिज्यिक विवादों में सलाह।</p></div>
+      </div>
+      <div class="practice-card">
+        <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5zM6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+        <div><h3>उपभोक्ता संरक्षण</h3><p>ठगी, दोषपूर्ण सेवा शिकायत</p></div>
+      </div>
+      <div class="practice-card">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <div><h3>साइबर व डेटा मामले</h3><p>ऑनलाइन धोखाधड़ी, डेटा चोरी</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="profile" class="alt">
+  <div class="wrap profile">
+    <div class="profile-photo">
+      <svg viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice">
+        <rect width="300" height="375" fill="#EDE7D8"/>
+        <circle cx="150" cy="150" r="62" fill="#AD8A4E" opacity="0.35"/>
+        <path d="M70 340c0-55 36-95 80-95s80 40 80 95" fill="#6E2430" opacity="0.3"/>
+        <text x="150" y="200" text-anchor="middle" fill="#6E2430" font-family="Noto Serif Devanagari" font-size="15" opacity="0.55">एडवोकेट प्रोफ़ाइल फोटो</text>
+      </svg>
+    </div>
+    <div>
+      <span class="tag" style="color:var(--maroon); font-size:0.92rem; font-weight:600;">वकील परिचय</span>
+      <h2 style="margin-top:10px; font-size:clamp(1.6rem,2.6vw,2.2rem);">पवन कुमार मिश्र, एडवोकेट</h2>
+      <p style="color:var(--text-soft); margin-top:8px;">अधिवक्ता, जिला एवं सत्र न्यायालय, कुशीनगर</p>
+      <div class="profile-quote">"हर क्लाइंट को न सिर्फ कानूनी हल चाहिए, बल्कि यह भरोसा भी चाहिए कि उनकी बात सुनी गई है।"</div>
+      <p>एडवोकेट पवन कुमार मिश्र जिला एवं सत्र न्यायालय, कुशीनगर में फौजदारी, पारिवारिक और संपत्ति विवादों से जुड़े मामलों में क्लाइंट्स का प्रतिनिधित्व करते हैं। इनका चेंबर छायाकुंज गोलम्बर (मन्दिर के पीछे), पड़रौना में स्थित है।</p>
+      <div class="profile-cred">
+        <div><b>कुशीनगर</b><span>जिला एवं सत्र न्यायालय</span></div>
+        <div><b>पड़रौना</b><span>चेंबर स्थान</span></div>
+        <div><b>फौजदारी</b><span>व पारिवारिक मामले</span></div>
+        <div><b>संपत्ति</b><span>विवाद विशेषज्ञ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking" class="booking">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">ऑनलाइन अपॉइंटमेंट बुकिंग</span>
+      <h2>अपनी सुविधा अनुसार स्लॉट चुनें</h2>
+      <p>तारीख और समय चुनें — बुकिंग कन्फर्म होते ही आपको ईमेल व SMS रिमाइंडर मिल जाएगा।</p>
+    </div>
+
+    <div class="booking-panel">
+      <div class="cal">
+        <div class="cal-head">
+          <b id="calMonthLabel">सितंबर 2026</b>
+          <div class="cal-nav">
+            <button id="prevMonth" aria-label="पिछला महीना">‹</button>
+            <button id="nextMonth" aria-label="अगला महीना">›</button>
+          </div>
+        </div>
+        <div class="cal-grid" id="calGrid">
+          <div class="dow">सो</div><div class="dow">मं</div><div class="dow">बु</div><div class="dow">गु</div><div class="dow">शु</div><div class="dow">श</div><div class="dow">र</div>
+        </div>
+      </div>
+      <div class="slots">
+        <b>उपलब्ध समय स्लॉट</b>
+        <div class="slot-grid" id="slotGrid">
+          <button data-t="10:00 AM">10:00 AM</button>
+          <button data-t="11:30 AM">11:30 AM</button>
+          <button data-t="02:00 PM">02:00 PM</button>
+          <button data-t="04:00 PM">04:00 PM</button>
+          <button data-t="05:30 PM">05:30 PM</button>
+          <button data-t="06:30 PM">06:30 PM</button>
+        </div>
+        <div class="booking-confirm" id="bookingConfirm">तारीख और समय चुनें, फिर नीचे अपना विवरण भरें।</div>
+        <a href="#" class="btn btn-primary" style="margin-top:18px; width:100%; justify-content:center;" id="confirmBtn">परामर्श कन्फर्म करें</a>
+      </div>
+    </div>
+
+    <div class="pay-note">
+      <div>
+        <b style="font-family:'Noto Serif Devanagari',serif; font-size:1.05rem;">सुरक्षित ऑनलाइन भुगतान</b>
+        <p style="color:#C7C0AF; font-size:0.9rem; margin-top:4px;">पेड कंसल्टेशन के लिए बुकिंग के समय ही भुगतान करें — केवल गंभीर क्लाइंट्स की बुकिंग कन्फर्म होती है।</p>
+      </div>
+      <div class="pay-badges">
+        <span>UPI</span><span>क्रेडिट / डेबिट कार्ड</span><span>नेट बैंकिंग</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">क्लाइंट अनुभव</span>
+      <h2>हमारे क्लाइंट्स क्या कहते हैं</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-mark">"</div>
+        <p>मेरे प्रॉपर्टी विवाद को सिर्फ तीन महीने में सुलझा दिया गया। पूरी प्रक्रिया में हर कदम पर स्पष्ट जानकारी दी गई।</p>
+        <div class="testi-who"><div class="testi-dot"></div><div><b>रजनीश गुप्ता</b><span>पड़रौना</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-mark">"</div>
+        <p>ऑनलाइन बुकिंग से लेकर सुनवाई तक, हर चीज़ बेहद व्यवस्थित थी। रिमाइंडर मिलने से कोई मीटिंग मिस नहीं हुई।</p>
+        <div class="testi-who"><div class="testi-dot"></div><div><b>प्रिया सिंह</b><span>कुशीनगर</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-mark">"</div>
+        <p>पारिवारिक मामले में जिस संवेदनशीलता और स्पष्टता के साथ सलाह दी गई, उसने पूरे परिवार को राहत दी।</p>
+        <div class="testi-who"><div class="testi-dot"></div><div><b>मोहित अग्रवाल</b><span>गोरखपुर</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="blog" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">लीगल ब्लॉग व संसाधन</span>
+      <h2>आपके सवालों के आसान जवाब</h2>
+      <p>कानूनी मुद्दों को सरल भाषा में समझें — हिंदी और अंग्रेज़ी दोनों में।</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <span class="cat">फौजदारी कानून</span>
+        <h3>चेक बाउंस होने पर क्या करें?</h3>
+        <p>धारा 138 के तहत कानूनी नोटिस से लेकर शिकायत दर्ज कराने तक की पूरी प्रक्रिया।</p>
+        <a href="#" class="read">पूरा पढ़ें</a>
+      </div>
+      <div class="blog-card">
+        <span class="cat">संपत्ति कानून</span>
+        <h3>प्रॉपर्टी खरीदते समय किन पेपर्स की जांच करें?</h3>
+        <p>टाइटल डीड से लेकर एनकंब्रेंस सर्टिफिकेट तक — ज़रूरी दस्तावेज़ों की सूची।</p>
+        <a href="#" class="read">पूरा पढ़ें</a>
+      </div>
+      <div class="blog-card">
+        <span class="cat">पारिवारिक कानून</span>
+        <h3>तलाक के दौरान गुजारा भत्ता कैसे तय होता है?</h3>
+        <p>आय, संपत्ति और ज़िम्मेदारियों के आधार पर भरण-पोषण की गणना कैसे होती है।</p>
+        <a href="#" class="read">पूरा पढ़ें</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>अपने मामले पर आज ही बात करें</h2>
+    <p>पहली सलाह मुफ़्त — बस अपनी सुविधा अनुसार समय चुनें।</p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn btn-primary">परामर्श बुक करें</a>
+      <a href="tel:+918840004115" class="btn btn-outline">📞 अभी कॉल करें</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-top">
+    <div>
+      <h4>पवन कुमार मिश्र, एडवोकेट</h4>
+      <p>जिला एवं सत्र न्यायालय, कुशीनगर में विधि परामर्श, प्रतिनिधित्व और दस्तावेज़ीकरण सेवाएं। भरोसे और स्पष्टता के साथ हर मामले का समाधान।</p>
+    </div>
+    <div class="foot-links">
+      <h4>त्वरित लिंक</h4>
+      <a href="#practice">प्रैक्टिस एरिया</a>
+      <a href="#profile">वकील परिचय</a>
+      <a href="#booking">अपॉइंटमेंट बुक करें</a>
+      <a href="#blog">लीगल ब्लॉग</a>
+    </div>
+    <div class="foot-links">
+      <h4>संपर्क</h4>
+      <a href="tel:+918840004115">📞 8840004115</a>
+      <a href="mailto:pavan.mishra1997@gmail.com">✉️ pavan.mishra1997@gmail.com</a>
+      <a href="#">📍 चेंबर: छायाकुंज गोलम्बर, (मन्दिर के पीछे), पड़रौना</a>
+      <a href="#">🏛️ जिला एवं सत्र न्यायालय, कुशीनगर</a>
+      <a href="#">🏠 आवास: कैशविलया उर्फ ख्वीरपुर, पो. व थाना — तरया सुजान, कुशीनगर</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 पवन कुमार मिश्र, एडवोकेट। सर्वाधिकार सुरक्षित।</span>
+    <span>गोपनीयता नीति · नियम व शर्तें</span>
+  </div>
+</footer>
+
+<button class="chat-fab" id="chatFab" aria-label="लाइव चैट खोलें">
+  <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-4-1L3 20l1-5.5a8.5 8.5 0 1 1 17-3z"/></svg>
+</button>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <div>
+      <b>पवन मिश्र एडवोकेट सहायक</b><br>
+      <span><span class="dot"></span>अभी उपलब्ध</span>
+    </div>
+    <button class="chat-close" id="chatClose" aria-label="चैट बंद करें">✕</button>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="msg bot">नमस्ते! मैं पवन कुमार मिश्र, एडवोकेट के कार्यालय से हूं। कृपया अपना नाम बताएं।</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="अपना जवाब लिखें...">
+    <button id="chatSend">भेजें</button>
+  </div>
+</div>
+
+<script>
+// ---------- Calendar widget ----------
+(function(){
+  const monthNames = ["जनवरी","फरवरी","मार्च","अप्रैल","मई","जून","जुलाई","अगस्त","सितंबर","अक्टूबर","नवंबर","दिसंबर"];
+  let current = new Date(2026, 8, 1); // Sept 2026
+  const today = new Date(2026, 8, 4);
+  let selectedDate = null, selectedSlot = null;
+
+  const grid = document.getElementById('calGrid');
+  const label = document.getElementById('calMonthLabel');
+  const confirmBox = document.getElementById('bookingConfirm');
+  const confirmBtn = document.getElementById('confirmBtn');
+
+  function render(){
+    // clear day buttons (keep dow labels, first 7 children)
+    while(grid.children.length > 7){ grid.removeChild(grid.lastChild); }
+    const year = current.getFullYear(), month = current.getMonth();
+    label.textContent = monthNames[month] + " " + year;
+    const firstDay = new Date(year, month, 1);
+    let startOffset = firstDay.getDay(); // 0=Sunday
+    const daysInMonth = new Date(year, month+1, 0).getDate();
+
+    for(let i=0;i<startOffset;i++){
+      const filler = document.createElement('div');
+      grid.appendChild(filler);
+    }
+    for(let d=1; d<=daysInMonth; d++){
+      const btn = document.createElement('button');
+      btn.className = 'day';
+      btn.textContent = d;
+      const thisDate = new Date(year, month, d);
+      if(thisDate < today || thisDate.getDay()===0){ btn.disabled = true; }
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('.cal-grid .day.selected').forEach(b=>b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedDate = d + " " + monthNames[month];
+        updateConfirm();
+      });
+      grid.appendChild(btn);
+    }
+  }
+  document.getElementById('prevMonth').addEventListener('click', ()=>{
+    current.setMonth(current.getMonth()-1); render();
+  });
+  document.getElementById('nextMonth').addEventListener('click', ()=>{
+    current.setMonth(current.getMonth()+1); render();
+  });
+
+  document.querySelectorAll('#slotGrid button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('#slotGrid button.selected').forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedSlot = btn.dataset.t;
+      updateConfirm();
+    });
+  });
+
+  function updateConfirm(){
+    if(selectedDate && selectedSlot){
+      confirmBox.textContent = "चयनित: " + selectedDate + " को " + selectedSlot + " — कन्फर्म करने के लिए नीचे बटन दबाएं।";
+      confirmBox.classList.add('active');
+    } else {
+      confirmBox.textContent = "तारीख और समय चुनें, फिर नीचे अपना विवरण भरें।";
+      confirmBox.classList.remove('active');
+    }
+  }
+
+  confirmBtn.addEventListener('click', (e)=>{
+    e.preventDefault();
+    if(selectedDate && selectedSlot){
+      confirmBox.textContent = "✓ आपकी अपॉइंटमेंट बुक हो गई है — " + selectedDate + ", " + selectedSlot + "। कन्फर्मेशन SMS/ईमेल भेज दिया गया है।";
+      confirmBox.classList.add('active');
+    } else {
+      confirmBox.textContent = "कृपया पहले तारीख और समय चुनें।";
+    }
+  });
+
+  render();
+})();
+
+// ---------- Live chat widget ----------
+(function(){
+  const fab = document.getElementById('chatFab');
+  const panel = document.getElementById('chatPanel');
+  const closeBtn = document.getElementById('chatClose');
+  const body = document.getElementById('chatBody');
+  const input = document.getElementById('chatInput');
+  const sendBtn = document.getElementById('chatSend');
+
+  const steps = ["आपका फ़ोन नंबर क्या है?", "आप किस विषय में सहायता चाहते हैं?", "धन्यवाद! हमारी टीम जल्द ही आपसे संपर्क करेगी।"];
+  let step = 0;
+
+  fab.addEventListener('click', ()=> panel.classList.toggle('open'));
+  closeBtn.addEventListener('click', ()=> panel.classList.remove('open'));
+
+  function addMsg(text, who){
+    const div = document.createElement('div');
+    div.className = 'msg ' + who;
+    div.textContent = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function handleSend(){
+    const val = input.value.trim();
+    if(!val) return;
+    addMsg(val, 'me');
+    input.value = '';
+    setTimeout(()=>{
+      if(step < steps.length){
+        addMsg(steps[step], 'bot');
+        step++;
+      }
+    }, 500);
+  }
+  sendBtn.addEventListener('click', handleSend);
+  input.addEventListener('keydown', (e)=>{ if(e.key==='Enter') handleSend(); });
+})();
+</script>
+
+</body>
+</html>
